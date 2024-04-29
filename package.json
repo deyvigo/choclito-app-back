@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon ./src/app.ts",
     "tsc-init": "tsc --init",
-    "start": "tsc ./src/app.ts"
+    "start": "public ./src/app.ts",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",

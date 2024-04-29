@@ -7,8 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon ./src/app.ts",
     "tsc-init": "tsc --init",
-    "start": "public ./src/app.ts",
-    "build": "tsc"
+    "copy-db": "mkdir -p dist/db && cp -r src/db/* dist/db/",
+    "build": "pnpm run copy-db && tsc",
+    "start": "node ./dist/app.js"
   },
   "keywords": [],
   "author": "",

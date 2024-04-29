@@ -5,4 +5,6 @@ const router = Router()
 
 router.get('/:username', UserController.getAllStatsByUsername)
 
+router.get('/users/all', UserController.getAll)
+
 export { router }

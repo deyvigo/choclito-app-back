@@ -37,6 +37,22 @@ export default class UserModel {
     })
   }
 
+  static getAll = async () => {
+    return new Promise<[GetUser]>((resolve, reject) => {
+      db.all(
+        'SELECT username, u.name as name, last_name, birth_day, r.name as rol FROM user AS u INNER JOIN rol AS r ON u.id_rol = r.id_rol',
+        [],
+        function (err, rows: [GetUser]) {
+          if (err) {
+            reject(err)
+          } else {
+            resolve(rows)
+          }
+        }
+      )
+    })
+  }
+
   static getAllStatsByUsername = async ({ username }: { username: string}) => {
     return new Promise<GetUser>((resolve, reject) => {
       db.get(

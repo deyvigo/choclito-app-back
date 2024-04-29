@@ -30,4 +30,13 @@ export default class UserController {
     }
     res.send(response)
   }
+
+  static getAll = async (req: Request, res: Response) => {
+    const response = await UserModel.getAll()
+    if (!response) {
+      res.send({ "error": "users nit found" })
+      return
+    }
+    res.send(response)
+  }
 }
